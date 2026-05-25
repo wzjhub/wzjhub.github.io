@@ -1,4 +1,4 @@
-import { Layout, Menu, Button, Space } from 'antd'
+import { Layout, Menu, Button } from 'antd'
 import {
   HomeOutlined,
   GithubOutlined,
@@ -6,6 +6,7 @@ import {
 } from '@ant-design/icons'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import ClockWeather from '../components/ClockWeather'
 
 const { Header, Content } = Layout
 
@@ -56,7 +57,8 @@ const MainLayout = () => {
           }}
         />
 
-        <Space>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <ClockWeather />
           <Button
             type="text"
             icon={<GithubOutlined />}
@@ -64,7 +66,7 @@ const MainLayout = () => {
             target="_blank"
             style={{ color: '#fff' }}
           />
-        </Space>
+        </div>
       </Header>
 
       <Content style={{ marginTop: 64 }}>

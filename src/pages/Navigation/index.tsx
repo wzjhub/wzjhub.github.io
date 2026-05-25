@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Typography, Input, Tag, Button, Modal, Form, Select, message, Popconfirm } from 'antd'
-import { SearchOutlined, EditOutlined, PlusOutlined, DeleteOutlined, HolderOutlined, CheckOutlined } from '@ant-design/icons'
+import { SearchOutlined, EditOutlined, PlusOutlined, DeleteOutlined, HolderOutlined, CheckOutlined, FireOutlined } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import {
   DndContext,
@@ -18,6 +18,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import SearchBar from '../../components/SearchBar'
 
 const { Title } = Typography
 
@@ -187,6 +188,23 @@ const saveCategories = (cats: Category[]) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cats))
 }
 
+// Click tracking for "frequently used"
+const CLICKS_KEY = 'nav_clicks'
+
+const getClickCounts = (): Record<string, number> => {
+  try {
+    const saved = localStorage.getItem(CLICKS_KEY)
+    if (saved) return JSON.parse(saved)
+  } catch {}
+  return {}
+}
+
+const recordClick = (siteId: string) => {
+  const counts = getClickCounts()
+  counts[siteId] = (counts[siteId] || 0) + 1
+  localStorage.setItem(CLICKS_KEY, JSON.stringify(counts))
+}
+
 // Sortable category item in sidebar
 const SortableCategoryItem = ({ category, isActive, isEditing, onClick }: { category: Category; isActive: boolean; isEditing: boolean; onClick: () => void }) => {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: category.id })
@@ -225,7 +243,6 @@ const SortableCategoryItem = ({ category, isActive, isEditing, onClick }: { cate
   )
 }
 
-// Sortable site card
 const SortableSiteCard = ({ site, isEditing, onDelete }: { site: SiteItem; isEditing: boolean; onDelete: () => void }) => {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: site.id })
 
@@ -252,7 +269,10 @@ const SortableSiteCard = ({ site, isEditing, onDelete }: { site: SiteItem; isEdi
           position: 'relative',
         }}
         onClick={() => {
-          if (!isEditing) window.open(site.url, '_blank')
+          if (!isEditing) {
+            recordClick(site.id)
+            window.open(site.url, '_blank')
+          }
         }}
       >
         {isEditing && (
@@ -307,6 +327,14 @@ const NavigationPage = () => {
   useEffect(() => {
     saveCategories(categories)
   }, [categories])
+
+  // Get frequently used sites (top 8 by click count)
+  const clickCounts = getClickCounts()
+  const allSites = categories.flatMap((cat) => cat.sites)
+  const frequentSites = allSites
+    .filter((site) => (clickCounts[site.id] || 0) > 0)
+    .sort((a, b) => (clickCounts[b.id] || 0) - (clickCounts[a.id] || 0))
+    .slice(0, 8)
 
   const handleCategoryDragEnd = (event: DragEndEvent) => {
     const { active, over } = event
@@ -388,10 +416,10 @@ const NavigationPage = () => {
   }
 
   return (
-    <div style={{ display: 'flex', maxWidth: 1400, margin: '0 auto', padding: '24px 16px', gap: 24 }}>
+    <div style={{ display: 'flex', maxWidth: 1400, margin: '0 auto', padding: '24px 16px 32px', gap: 24 }}>
       {/* Left sidebar */}
       <aside style={{ width: 150, flexShrink: 0, position: 'sticky', top: 88, height: 'fit-content' }}>
-        <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(99, 102, 241, 0.1)', padding: '12px 0' }}>
+        <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(99, 102, 241, 0.1)', padding: '12px 0 20px' }}>
           <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleCategoryDragEnd}>
             <SortableContext items={categories.map((c) => c.id)} strategy={verticalListSortingStrategy}>
               {categories.map((cat) => (
@@ -410,26 +438,33 @@ const NavigationPage = () => {
 
       {/* Main content */}
       <main style={{ flex: 1, minWidth: 0 }}>
-        {/* Top bar */}
+        {/* Search bar - centered */}
+        <div style={{ maxWidth: 650, margin: '0 auto 20px' }}>
+          <SearchBar />
+        </div>
+
+        {/* Edit toolbar */}
         <div style={{ display: 'flex', gap: 12, marginBottom: 20, alignItems: 'center', flexWrap: 'wrap' }}>
           <Input
-            placeholder="搜索网站..."
+            placeholder="站内搜索..."
             prefix={<SearchOutlined style={{ color: 'rgba(255,255,255,0.4)' }} />}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             allowClear
-            style={{ flex: 1, minWidth: 200, maxWidth: 360, background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(99, 102, 241, 0.2)', borderRadius: 8 }}
+            size="small"
+            style={{ flex: 1, minWidth: 160, maxWidth: 260, background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(99, 102, 241, 0.2)', borderRadius: 8 }}
           />
           <Button
             type={isEditing ? 'primary' : 'default'}
             icon={isEditing ? <CheckOutlined /> : <EditOutlined />}
             onClick={() => setIsEditing(!isEditing)}
+            size="small"
           >
             {isEditing ? '完成' : '编辑'}
           </Button>
           {isEditing && (
             <>
-              <Button icon={<PlusOutlined />} onClick={() => setAddModalOpen(true)}>
+              <Button icon={<PlusOutlined />} onClick={() => setAddModalOpen(true)} size="small">
                 添加
               </Button>
               <Button size="small" onClick={handleReset}>
@@ -438,6 +473,89 @@ const NavigationPage = () => {
             </>
           )}
         </div>
+
+        {/* Frequently used */}
+        {!search && frequentSites.length > 0 && (
+          <section style={{ marginBottom: 28 }}>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: 12 }}>
+              <FireOutlined style={{ fontSize: '1.1rem', marginRight: 6, color: '#f59e0b' }} />
+              <Title level={5} style={{ margin: 0 }}>常用网站</Title>
+              {isEditing && (
+                <Button
+                  size="small"
+                  danger
+                  style={{ marginLeft: 12 }}
+                  onClick={() => {
+                    localStorage.removeItem(CLICKS_KEY)
+                    message.success('已清除常用记录')
+                    setCategories([...categories]) // force re-render
+                  }}
+                >
+                  清除记录
+                </Button>
+              )}
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 10 }}>
+              {frequentSites.map((site) => (
+                <motion.a
+                  key={`freq-${site.id}`}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => recordClick(site.id)}
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    padding: '10px 12px',
+                    borderRadius: 10,
+                    background: 'rgba(245, 158, 11, 0.05)',
+                    border: '1px solid rgba(245, 158, 11, 0.2)',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s',
+                    position: 'relative',
+                  }}
+                >
+                  <img
+                    src={`/favicons/${new URL(site.url).hostname.replace(/[^a-zA-Z0-9.]/g, '_')}.png`}
+                    alt=""
+                    style={{ width: 20, height: 20, borderRadius: 3, flexShrink: 0 }}
+                    onError={(e) => {
+                      const img = e.target as HTMLImageElement
+                      if (!img.dataset.fallback) {
+                        img.dataset.fallback = '1'
+                        img.src = `https://favicon.im/${new URL(site.url).hostname}`
+                      } else {
+                        img.style.display = 'none'
+                      }
+                    }}
+                  />
+                  <div style={{ minWidth: 0, flex: 1 }}>
+                    <div style={{ fontSize: '0.85rem', fontWeight: 500, color: 'rgba(255,255,255,0.9)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      {site.title}
+                    </div>
+                  </div>
+                  {isEditing && (
+                    <DeleteOutlined
+                      style={{ color: '#ff4d4f', fontSize: '0.75rem', cursor: 'pointer' }}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        const counts = getClickCounts()
+                        delete counts[site.id]
+                        localStorage.setItem(CLICKS_KEY, JSON.stringify(counts))
+                        setCategories([...categories]) // force re-render
+                        message.success('已移除')
+                      }}
+                    />
+                  )}
+                </motion.a>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Categories */}
         {filteredCategories.map((category) => (
