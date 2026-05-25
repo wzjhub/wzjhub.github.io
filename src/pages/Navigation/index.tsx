@@ -59,6 +59,7 @@ const defaultCategories: Category[] = [
       { id: 'ai-7', title: '智谱清言', url: 'https://chatglm.cn/main/alltoolsdetail', desc: '智谱 AI 全能工具' },
       { id: 'ai-8', title: '腾讯ima', url: 'https://ima.qq.com', desc: '腾讯 AI 助手' },
       { id: 'ai-9', title: 'zRead', url: 'https://zread.ai', desc: 'AI 阅读助手' },
+      { id: 'ai-10', title: 'Google Labs', url: 'https://labs.google', desc: 'Google AI 实验室' },
     ],
   },
   {
@@ -72,6 +73,7 @@ const defaultCategories: Category[] = [
       { id: 'plat-4', title: '百度网盘', url: 'https://pan.baidu.com', desc: '百度云存储' },
       { id: 'plat-8', title: '个人服务器', url: 'http://47.103.213.167', desc: '个人云服务器' },
       { id: 'plat-5', title: '飞书', url: 'https://accounts.feishu.cn', desc: '字节跳动协作办公平台' },
+      { id: 'plat-9', title: '轻量应用服务器', url: 'https://swasnext.console.aliyun.com/servers/cn-shanghai', desc: '阿里云轻量服务器控制台' },
     ],
   },
   {
@@ -82,6 +84,7 @@ const defaultCategories: Category[] = [
       { id: 'mail-1', title: 'QQ邮箱', url: 'https://mail.qq.com', desc: '腾讯邮箱' },
       { id: 'mail-2', title: '网易邮箱', url: 'https://mail.163.com', desc: '网易免费邮箱' },
       { id: 'mail-3', title: '2925邮箱', url: 'https://www.2925.com/login/', desc: '2925 免费邮箱' },
+      { id: 'mail-4', title: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', desc: 'Google 邮箱' },
     ],
   },
   {
