@@ -1,36 +1,25 @@
 import { Layout, Menu, Button, Space } from 'antd'
 import {
   HomeOutlined,
-  ToolOutlined,
-  ProjectOutlined,
-  UserOutlined,
   GithubOutlined,
-  SunOutlined,
-  MoonOutlined,
+  CompassOutlined,
 } from '@ant-design/icons'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-const { Header, Content, Footer } = Layout
+const { Header, Content } = Layout
 
-interface MainLayoutProps {
-  isDark: boolean
-  toggleTheme: () => void
-}
-
-const MainLayout = ({ isDark, toggleTheme }: MainLayoutProps) => {
+const MainLayout = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
   const menuItems = [
     { key: '/', icon: <HomeOutlined />, label: '首页' },
-    { key: '/tools', icon: <ToolOutlined />, label: '工具库' },
-    { key: '/projects', icon: <ProjectOutlined />, label: '项目' },
-    { key: '/about', icon: <UserOutlined />, label: '关于' },
+    { key: '/nav', icon: <CompassOutlined />, label: '导航' },
   ]
 
   return (
-    <Layout style={{ minHeight: '100vh', background: isDark ? '#0f0f23' : '#f5f5f5' }}>
+    <Layout style={{ minHeight: '100vh', background: '#0f0f23' }}>
       <Header
         style={{
           position: 'fixed',
@@ -40,9 +29,9 @@ const MainLayout = ({ isDark, toggleTheme }: MainLayoutProps) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: isDark ? 'rgba(15, 15, 35, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+          background: 'rgba(15, 15, 35, 0.8)',
           backdropFilter: 'blur(20px)',
-          borderBottom: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'}`,
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
           padding: '0 24px',
         }}
       >
@@ -70,16 +59,10 @@ const MainLayout = ({ isDark, toggleTheme }: MainLayoutProps) => {
         <Space>
           <Button
             type="text"
-            icon={isDark ? <SunOutlined /> : <MoonOutlined />}
-            onClick={toggleTheme}
-            style={{ color: isDark ? '#fff' : '#000' }}
-          />
-          <Button
-            type="text"
             icon={<GithubOutlined />}
             href="https://github.com/wzjhub"
             target="_blank"
-            style={{ color: isDark ? '#fff' : '#000' }}
+            style={{ color: '#fff' }}
           />
         </Space>
       </Header>
@@ -95,17 +78,6 @@ const MainLayout = ({ isDark, toggleTheme }: MainLayoutProps) => {
           <Outlet />
         </motion.div>
       </Content>
-
-      <Footer
-        style={{
-          textAlign: 'center',
-          background: 'transparent',
-          color: isDark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)',
-          padding: '24px 50px',
-        }}
-      >
-        © {new Date().getFullYear()} Wzjhub · Built with React + Ant Design
-      </Footer>
     </Layout>
   )
 }
