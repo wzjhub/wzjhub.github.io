@@ -28,19 +28,20 @@ const SearchBar = () => {
   return (
     <div>
       {/* Engine tabs - centered */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 0, marginBottom: 10 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 0, marginBottom: 10, overflowX: 'auto' }}>
         {engines.map((e) => (
           <div
             key={e.value}
             onClick={() => setEngine(e.value)}
             style={{
-              padding: '6px 14px',
-              fontSize: '0.8rem',
+              padding: '6px 10px',
+              fontSize: '0.75rem',
               cursor: 'pointer',
               color: engine === e.value ? e.color : 'rgba(255,255,255,0.5)',
               fontWeight: engine === e.value ? 600 : 400,
               borderBottom: engine === e.value ? `2px solid ${e.color}` : '2px solid transparent',
               transition: 'all 0.2s',
+              whiteSpace: 'nowrap',
             }}
           >
             {e.label}

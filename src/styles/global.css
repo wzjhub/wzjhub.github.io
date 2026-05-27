@@ -81,3 +81,68 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .nav-sidebar {
+    display: none !important;
+  }
+
+  .nav-mobile-tabs {
+    display: block !important;
+  }
+
+  .nav-layout {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  /* Hide clock on mobile */
+  .nav-clock {
+    display: none !important;
+  }
+
+  /* Hide sidebar toggle on mobile (use mobile tabs instead) */
+  #sidebar-toggle {
+    display: none !important;
+  }
+
+  /* Header compact */
+  .ant-layout-header {
+    padding: 0 12px !important;
+  }
+}
+
+/* Hide scrollbar on mobile tabs */
+.nav-mobile-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-mobile-tabs {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+  /* Make grid cards full width on small screens */
+  .nav-page section > div:last-child {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-page section > div:last-child {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Fix Antd input focus bar */
+.ant-input-affix-wrapper-focused::after,
+.ant-input-focused::after {
+  display: none !important;
+}
+
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  box-shadow: none !important;
+}

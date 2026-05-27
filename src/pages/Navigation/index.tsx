@@ -44,6 +44,7 @@ const defaultCategories: Category[] = [
     sites: [
       { id: 'portal-1', title: '菜鸟工具', url: 'https://www.jyshare.com', desc: '开发设计在线工具集合' },
       { id: 'portal-2', title: '龙虾导航', url: 'https://www.claw123.com', desc: 'Claw123 网址导航' },
+      { id: 'portal-3', title: 'iyouhun', url: 'https://app.iyouhun.com', desc: '电视盒子' },
     ],
   },
   {
@@ -317,6 +318,7 @@ const NavigationPage = () => {
   const [search, setSearch] = useState('')
   const [isEditing, setIsEditing] = useState(false)
   const [addModalOpen, setAddModalOpen] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(window.innerWidth < 768)
   const [form] = Form.useForm()
   const [activeCategory, setActiveCategory] = useState(categories[0]?.id || '')
 
@@ -327,6 +329,13 @@ const NavigationPage = () => {
   useEffect(() => {
     saveCategories(categories)
   }, [categories])
+
+  // Listen for sidebar toggle from header
+  useEffect(() => {
+    const handler = () => setSidebarCollapsed((prev) => !prev)
+    window.addEventListener('toggle-sidebar', handler)
+    return () => window.removeEventListener('toggle-sidebar', handler)
+  }, [])
 
   // Get frequently used sites (top 8 by click count)
   const clickCounts = getClickCounts()
@@ -416,10 +425,48 @@ const NavigationPage = () => {
   }
 
   return (
-    <div style={{ display: 'flex', maxWidth: 1400, margin: '0 auto', padding: '24px 16px 32px', gap: 24 }}>
-      {/* Left sidebar */}
-      <aside style={{ width: 150, flexShrink: 0, position: 'sticky', top: 88, height: 'fit-content' }}>
-        <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(99, 102, 241, 0.1)', padding: '12px 0 20px' }}>
+    <div className="nav-page" style={{ maxWidth: 1400, margin: '0 auto', padding: '24px 16px 32px' }}>
+      {/* Mobile category tabs (horizontal scroll) */}
+      <div className="nav-mobile-tabs" style={{ display: 'none', position: 'relative', marginBottom: 16 }}>
+        <div style={{ overflowX: 'auto', paddingBottom: 8, WebkitOverflowScrolling: 'touch' }}>
+          <div style={{ display: 'inline-flex', gap: 8, whiteSpace: 'nowrap', minWidth: 'max-content', paddingRight: 30 }}>
+          {categories.map((cat) => (
+            <div
+              key={cat.id}
+              onClick={() => scrollToCategory(cat.id)}
+              style={{
+                padding: '6px 12px',
+                borderRadius: 16,
+                fontSize: '0.8rem',
+                cursor: 'pointer',
+                background: activeCategory === cat.id ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255,255,255,0.03)',
+                border: activeCategory === cat.id ? '1px solid rgba(99, 102, 241, 0.4)' : '1px solid rgba(255,255,255,0.08)',
+                color: activeCategory === cat.id ? '#6366f1' : 'rgba(255,255,255,0.6)',
+              }}
+            >
+              {cat.icon} {cat.name}
+            </div>
+          ))}
+          </div>
+        </div>
+        {/* Fade hint */}
+        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 8, width: 40, background: 'linear-gradient(to right, transparent, #0f0f23)', pointerEvents: 'none' }} />
+      </div>
+
+      <div className="nav-layout" style={{ display: 'flex', gap: sidebarCollapsed ? 12 : 24 }}>
+      {/* Left sidebar - collapsible */}
+      <aside
+        className="nav-sidebar"
+        style={{
+          width: sidebarCollapsed ? 36 : 150,
+          flexShrink: 0,
+          position: 'sticky',
+          top: 88,
+          height: 'fit-content',
+          transition: 'width 0.3s ease',
+        }}
+      >
+        <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(99, 102, 241, 0.1)', padding: '12px 0 8px', overflow: 'hidden', display: sidebarCollapsed ? 'none' : 'block' }}>
           <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleCategoryDragEnd}>
             <SortableContext items={categories.map((c) => c.id)} strategy={verticalListSortingStrategy}>
               {categories.map((cat) => (
@@ -589,6 +636,7 @@ const NavigationPage = () => {
           </div>
         )}
       </main>
+      </div>{/* end nav-layout */}
 
       {/* Add site modal */}
       <Modal

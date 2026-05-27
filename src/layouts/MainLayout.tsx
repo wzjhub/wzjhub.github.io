@@ -3,16 +3,26 @@ import {
   HomeOutlined,
   GithubOutlined,
   CompassOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
 } from '@ant-design/icons'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ClockWeather from '../components/ClockWeather'
+import { useState, useEffect } from 'react'
 
 const { Header, Content } = Layout
 
 const MainLayout = () => {
   const navigate = useNavigate()
   const location = useLocation()
+  const [sidebarOpen, setSidebarOpen] = useState(true)
+
+  useEffect(() => {
+    const handler = () => setSidebarOpen((prev) => !prev)
+    window.addEventListener('toggle-sidebar', handler)
+    return () => window.removeEventListener('toggle-sidebar', handler)
+  }, [])
 
   const menuItems = [
     { key: '/', icon: <HomeOutlined />, label: '首页' },
@@ -36,13 +46,22 @@ const MainLayout = () => {
           padding: '0 24px',
         }}
       >
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          style={{ cursor: 'pointer', fontSize: '1.25rem', fontWeight: 700 }}
-          onClick={() => navigate('/')}
-        >
-          <span className="glow-text">Wzjhub</span>
-        </motion.div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span
+            id="sidebar-toggle"
+            onClick={() => window.dispatchEvent(new CustomEvent('toggle-sidebar'))}
+            style={{ cursor: 'pointer', color: 'rgba(255,255,255,0.5)', fontSize: '1rem' }}
+          >
+            {sidebarOpen ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
+          </span>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            style={{ cursor: 'pointer', fontSize: '1.25rem', fontWeight: 700 }}
+            onClick={() => navigate('/')}
+          >
+            <span className="glow-text">Wzjhub</span>
+          </motion.div>
+        </div>
 
         <Menu
           mode="horizontal"
@@ -57,7 +76,7 @@ const MainLayout = () => {
           }}
         />
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+        <div className="nav-clock" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <ClockWeather />
           <Button
             type="text"
