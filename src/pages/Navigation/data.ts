@@ -1,0 +1,305 @@
+export interface SiteItem {
+  id: string
+  title: string
+  url: string
+  desc: string
+}
+
+export interface Category {
+  id: string
+  name: string
+  icon: string
+  sites: SiteItem[]
+}
+
+export const defaultCategories: Category[] = [
+  {
+    id: 'portal',
+    name: '综合导航',
+    icon: '🌐',
+    sites: [
+      { id: 'portal-1', title: '菜鸟工具', url: 'https://www.jyshare.com', desc: '开发设计在线工具集合' },
+      { id: 'portal-2', title: '龙虾导航', url: 'https://www.claw123.com', desc: 'Claw123 网址导航' },
+      { id: 'portal-3', title: 'iyouhun', url: 'https://app.iyouhun.com', desc: '电视盒子' },
+      { id: 'portal-4', title: 'AlternativeTo', url: 'https://alternativeto.net', desc: '搜任何付费软件的免费开源替代品' },
+      { id: 'portal-5', title: 'TinyWow', url: 'https://tinywow.com', desc: '100+免费在线工具，压缩/转换/编辑全都有' },
+    ],
+  },
+  {
+    id: 'platform',
+    name: '云平台',
+    icon: '☁️',
+    sites: [
+      { id: 'plat-1', title: '阿里百炼', url: 'https://bailian.console.aliyun.com/?tab=app#/app-market', desc: '阿里云 AI 应用市场' },
+      { id: 'plat-2', title: '火山引擎', url: 'https://console.volcengine.com', desc: '字节跳动云服务平台' },
+      { id: 'plat-3', title: '阿里云盘', url: 'https://www.aliyundrive.com', desc: '阿里云盘网盘' },
+      { id: 'plat-4', title: '百度网盘', url: 'https://pan.baidu.com', desc: '百度云存储' },
+      { id: 'plat-5', title: '飞书', url: 'https://accounts.feishu.cn', desc: '字节跳动协作办公平台' },
+      { id: 'plat-6', title: '个人服务器', url: 'http://47.103.213.167', desc: '个人云服务器' },
+      { id: 'plat-7', title: '轻量应用服务器', url: 'https://swasnext.console.aliyun.com/servers/cn-shanghai', desc: '阿里云轻量服务器控制台' },
+    ],
+  },
+  {
+    id: 'ai-chat',
+    name: 'AI 对话',
+    icon: '🤖',
+    sites: [
+      { id: 'aic-1', title: 'ChatGPT', url: 'https://chat.openai.com', desc: 'OpenAI 对话式 AI' },
+      { id: 'aic-2', title: 'DeepSeek', url: 'https://chat.deepseek.com', desc: '深度求索 AI 助手' },
+      { id: 'aic-3', title: 'Claude', url: 'https://claude.ai', desc: 'Anthropic AI 助手，长文处理天花板' },
+      { id: 'aic-4', title: 'Kimi', url: 'https://kimi.moonshot.cn', desc: '月之暗面长文本 AI' },
+      { id: 'aic-5', title: '通义千问', url: 'https://tongyi.aliyun.com', desc: '阿里 AI 大模型' },
+      { id: 'aic-6', title: '豆包', url: 'https://www.doubao.com', desc: '字节跳动 AI 助手' },
+      { id: 'aic-7', title: '智谱清言', url: 'https://chatglm.cn/main/alltoolsdetail', desc: '智谱 AI 全能工具' },
+      { id: 'aic-8', title: '腾讯ima', url: 'https://ima.qq.com', desc: '腾讯 AI 助手' },
+      { id: 'aic-9', title: 'Poe', url: 'https://poe.com', desc: '一个网站用 GPT-4o/Claude/Gemini' },
+      { id: 'aic-10', title: 'Google Labs', url: 'https://labs.google', desc: 'Google AI 实验室' },
+    ],
+  },
+  {
+    id: 'ai-search',
+    name: 'AI 搜索',
+    icon: '🔍',
+    sites: [
+      { id: 'ais-1', title: 'Perplexity', url: 'https://perplexity.ai', desc: 'AI 搜索引擎，问任何问题秒给答案+来源' },
+      { id: 'ais-2', title: 'Phind', url: 'https://phind.com', desc: '开发者专属 AI 搜索，代码问题一搜即解' },
+      { id: 'ais-3', title: 'zRead', url: 'https://zread.ai', desc: 'AI 阅读助手' },
+    ],
+  },
+  {
+    id: 'ai-image',
+    name: 'AI 生图',
+    icon: '🖼️',
+    sites: [
+      { id: 'aig-1', title: 'Raphael', url: 'https://raphael.ai', desc: '免费无限 AI 生图，质量直逼 Midjourney' },
+      { id: 'aig-2', title: 'Krea', url: 'https://krea.ai', desc: '实时 AI 生图，边画边出图' },
+      { id: 'aig-3', title: 'Magnific', url: 'https://magnific.ai', desc: 'AI 无限放大图片，细节自动补全' },
+      { id: 'aig-4', title: 'Clipdrop', url: 'https://clipdrop.co', desc: 'AI 一键去背景/补光/擦除' },
+      { id: 'aig-5', title: 'HuggingFace Spaces', url: 'https://huggingface.co/spaces', desc: '开源 AI 模型免费试玩场' },
+    ],
+  },
+  {
+    id: 'ai-video',
+    name: 'AI 视频',
+    icon: '🎬',
+    sites: [
+      { id: 'aiv-1', title: 'Runway', url: 'https://runwayml.com', desc: 'AI 视频生成先驱，Gen-3 免费试' },
+      { id: 'aiv-2', title: '可灵AI', url: 'https://klingai.com', desc: '快手可灵 AI，中文视频生成最丝滑' },
+      { id: 'aiv-3', title: 'Hedra', url: 'https://hedra.com', desc: '一张照片+一段语音=说话的数字人' },
+      { id: 'aiv-4', title: 'SadTalker', url: 'https://sadtalker.ai', desc: '静态照片变说话视频' },
+      { id: 'aiv-5', title: 'DeepSwap', url: 'https://deepswap.ai', desc: 'AI 换脸，1 分钟出片' },
+      { id: 'aiv-6', title: 'Opus Pro', url: 'https://opus.pro', desc: 'AI 剪辑短视频，自动找高光片段' },
+    ],
+  },
+  {
+    id: 'ai-audio',
+    name: 'AI 音频',
+    icon: '🎵',
+    sites: [
+      { id: 'aia-1', title: 'ElevenLabs', url: 'https://elevenlabs.io', desc: 'AI 语音克隆，5 秒模仿任何声音' },
+      { id: 'aia-2', title: 'Suno', url: 'https://suno.com', desc: '输入歌词自动生成完整歌曲' },
+      { id: 'aia-3', title: 'Musiio', url: 'https://musiio.com', desc: 'AI 音乐标签+推荐' },
+    ],
+  },
+  {
+    id: 'ai-code',
+    name: 'AI 编程',
+    icon: '🧑‍💻',
+    sites: [
+      { id: 'aicd-1', title: 'Cursor', url: 'https://cursor.sh', desc: 'AI 写代码，免费额度够日常用' },
+      { id: 'aicd-2', title: 'Bolt', url: 'https://bolt.new', desc: '说话就能建网站，零代码' },
+      { id: 'aicd-3', title: 'v0', url: 'https://v0.dev', desc: 'Vercel AI 前端生成器，描述即页面' },
+      { id: 'aicd-4', title: 'Replit', url: 'https://replit.com', desc: '浏览器里写代码+AI 辅助+一键部署' },
+      { id: 'aicd-5', title: 'tldraw Make Real', url: 'https://tldraw.com/make-real', desc: '画草图 AI 自动生成真实网页' },
+    ],
+  },
+  {
+    id: 'ai-office',
+    name: 'AI 办公',
+    icon: '📊',
+    sites: [
+      { id: 'aio-1', title: 'Napkin', url: 'https://napkin.ai', desc: '粘贴文字自动生成信息图' },
+      { id: 'aio-2', title: 'Gamma', url: 'https://gamma.app', desc: 'AI 一键生成 PPT，告别 PPT 地狱' },
+      { id: 'aio-3', title: 'Notion AI', url: 'https://notion.so/product/ai', desc: 'Notion AI 免费写+总结+翻译' },
+      { id: 'aio-4', title: 'Otter', url: 'https://otter.ai', desc: '会议实时转文字，免费每月 300 分钟' },
+      { id: 'aio-5', title: 'Jasper', url: 'https://jasper.ai/free', desc: 'AI 写作助手，免费版够日常' },
+    ],
+  },
+  {
+    id: 'img-edit',
+    name: '图片/视频编辑',
+    icon: '✂️',
+    sites: [
+      { id: 'img-1', title: 'Photopea', url: 'https://photopea.com', desc: '浏览器里的完整版 Photoshop，免费' },
+      { id: 'img-2', title: 'Remove.bg', url: 'https://remove.bg', desc: '照片一键去背景，AI 准得离谱' },
+      { id: 'img-3', title: 'Cleanup.pictures', url: 'https://cleanup.pictures', desc: '照片里不想看到的东西直接擦掉' },
+      { id: 'img-4', title: 'Unscreen', url: 'https://unscreen.com', desc: '视频一键去背景，做出透明人物特效' },
+    ],
+  },
+  {
+    id: 'download',
+    name: '下载神器',
+    icon: '📥',
+    sites: [
+      { id: 'dl-1', title: 'Cobalt', url: 'https://cobalt.tools', desc: 'YouTube/Instagram/TikTok 一键下载，无水印' },
+      { id: 'dl-2', title: 'DownloadHD', url: 'https://downloadhd.net', desc: '高清视频下载' },
+      { id: 'dl-3', title: 'X/Twitter 下载', url: 'https://x-twitter-downloader.com', desc: 'Twitter/X 视频下载器' },
+    ],
+  },
+  {
+    id: 'privacy',
+    name: '隐私/安全',
+    icon: '🔒',
+    sites: [
+      { id: 'priv-1', title: 'Temp Mail', url: 'https://temp-mail.org', desc: '一秒生成临时邮箱，用完就扔' },
+      { id: 'priv-2', title: 'Have I Been Pwned', url: 'https://haveibeenpwned.com', desc: '输入邮箱查自己有没有被泄露' },
+      { id: 'priv-3', title: 'VirusTotal', url: 'https://virustotal.com', desc: '上传文件或链接扫病毒和恶意代码' },
+      { id: 'priv-4', title: 'Privnote', url: 'https://privnote.com', desc: '发自毁消息，看完链接自动失效' },
+      { id: 'priv-5', title: 'File.io', url: 'https://file.io', desc: '上传文件生成一次性下载链接' },
+      { id: 'priv-6', title: 'Brave', url: 'https://brave.com', desc: '隐私浏览器，默认屏蔽所有追踪器' },
+    ],
+  },
+  {
+    id: 'archive',
+    name: '搜索/存档',
+    icon: '🔎',
+    sites: [
+      { id: 'arc-1', title: 'Archive.org', url: 'https://archive.org', desc: 'Wayback Machine，翻看被删掉的网页+免费书' },
+      { id: 'arc-2', title: 'Archive.ph', url: 'https://archive.ph', desc: '永久保存任何网页，原站删了也能看' },
+      { id: 'arc-3', title: 'JustWatch', url: 'https://justwatch.com', desc: '查电影电视剧在哪个平台能看' },
+      { id: 'arc-4', title: 'DuckDuckGo', url: 'https://duckduckgo.com', desc: '隐私搜索引擎，不追踪用户' },
+      { id: 'arc-5', title: 'NewsNow', url: 'https://newsnow.busiyi.world', desc: '实时新闻聚合' },
+      { id: 'arc-6', title: 'DataTool', url: 'https://www.datatool.vip/zh', desc: '数据工具集合' },
+      { id: 'arc-7', title: 'Yandex', url: 'https://yandex.com', desc: '俄罗斯搜索引擎' },
+    ],
+  },
+  {
+    id: 'mail',
+    name: '邮箱通讯',
+    icon: '📧',
+    sites: [
+      { id: 'mail-1', title: 'QQ邮箱', url: 'https://mail.qq.com', desc: '腾讯邮箱' },
+      { id: 'mail-2', title: '网易邮箱', url: 'https://mail.163.com', desc: '网易免费邮箱' },
+      { id: 'mail-3', title: '2925邮箱', url: 'https://www.2925.com/login/', desc: '2925 免费邮箱' },
+      { id: 'mail-4', title: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', desc: 'Google 邮箱' },
+    ],
+  },
+  {
+    id: 'dev',
+    name: '开发工具',
+    icon: '⌨️',
+    sites: [
+      { id: 'dev-1', title: 'GitHub', url: 'https://github.com', desc: '代码托管平台' },
+      { id: 'dev-2', title: 'Gitee', url: 'https://gitee.com', desc: '国内代码托管' },
+      { id: 'dev-3', title: 'npm', url: 'https://www.npmjs.com', desc: 'Node.js 包管理仓库' },
+      { id: 'dev-4', title: 'Apifox', url: 'https://app.apifox.com/main', desc: 'API 设计开发测试' },
+      { id: 'dev-5', title: 'JSON Viewer', url: 'https://jsonviewer.stack.hu', desc: 'JSON 在线可视化' },
+      { id: 'dev-6', title: 'Learn Git', url: 'https://learngitbranching.js.org/?locale=zh_CN', desc: 'Git 分支交互式学习' },
+      { id: 'dev-7', title: 'Redisson Wiki', url: 'https://github.com/redisson/redisson/wiki', desc: 'Redisson 分布式锁文档' },
+      { id: 'dev-8', title: 'CodePen', url: 'https://codepen.io', desc: '前端在线编辑器' },
+      { id: 'dev-9', title: 'Stack Overflow', url: 'https://stackoverflow.com', desc: '开发者问答社区' },
+      { id: 'dev-10', title: 'MDN', url: 'https://developer.mozilla.org', desc: 'Web 开发文档' },
+      { id: 'dev-11', title: 'JetBrains', url: 'https://www.jetbrains.com/products/', desc: 'IDE 开发工具全家桶' },
+    ],
+  },
+  {
+    id: 'tools',
+    name: '在线工具',
+    icon: '⚡',
+    sites: [
+      { id: 'tools-1', title: 'PDF24 Tools', url: 'https://tools.pdf24.org/zh/all-tools', desc: '免费 PDF 在线工具集' },
+      { id: 'tools-2', title: '在线工具 tool.lu', url: 'https://tool.lu', desc: '开发者在线工具箱' },
+      { id: 'tools-3', title: '条形码生成', url: 'https://www.dute.org/barcode', desc: '在线条形码生成器' },
+      { id: 'tools-4', title: 'Labelary', url: 'https://labelary.com/viewer.html', desc: 'ZPL 标签在线预览' },
+      { id: 'tools-5', title: '时间戳转换', url: 'https://tool.chinaz.com/tools/unixtime.aspx', desc: '站长工具时间戳转换' },
+      { id: 'tools-6', title: 'JSON 格式化', url: 'https://www.json.cn', desc: 'JSON 在线解析' },
+      { id: 'tools-7', title: '正则测试', url: 'https://regex101.com', desc: '正则表达式测试' },
+      { id: 'tools-8', title: 'TinyPNG', url: 'https://tinypng.com', desc: '图片压缩' },
+      { id: 'tools-9', title: 'Carbon', url: 'https://carbon.now.sh', desc: '代码截图美化' },
+      { id: 'tools-10', title: 'Can I Use', url: 'https://caniuse.com', desc: '浏览器兼容性查询' },
+      { id: 'tools-11', title: 'Excalidraw', url: 'https://excalidraw.com', desc: '在线白板画图' },
+      { id: 'tools-12', title: 'PixPin', url: 'https://pixpin.cn/docs/start/quick-start', desc: '截图贴图工具' },
+      { id: 'tools-13', title: 'Ditto', url: 'https://sabrogden.github.io/Ditto/', desc: '剪贴板增强管理工具' },
+      { id: 'tools-14', title: 'Infinity 新标签页', url: 'https://microsoftedge.microsoft.com/addons/detail/infinity-%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5-pro/hajlmbnnniemimmaehcefkamdadpjlfa', desc: 'Edge 新标签页扩展' },
+    ],
+  },
+  {
+    id: 'learn',
+    name: '学习资源',
+    icon: '📚',
+    sites: [
+      { id: 'learn-1', title: '语雀', url: 'https://www.yuque.com', desc: '知识管理协作平台' },
+      { id: 'learn-2', title: '石墨文档', url: 'https://shimo.im', desc: '在线协作文档' },
+      { id: 'learn-3', title: '微信读书', url: 'https://weread.qq.com', desc: '在线阅读' },
+      { id: 'learn-4', title: '得到', url: 'https://www.dedao.cn', desc: '知识服务平台' },
+      { id: 'learn-5', title: '掘金', url: 'https://juejin.cn', desc: '开发者技术社区' },
+      { id: 'learn-6', title: 'LeetCode', url: 'https://leetcode.cn', desc: '算法刷题平台' },
+      { id: 'learn-7', title: '菜鸟教程', url: 'https://www.runoob.com', desc: '编程入门教程' },
+      { id: 'learn-8', title: '笔记', url: 'https://www.biji.com/note', desc: '在线笔记工具' },
+      { id: 'learn-10', title: 'WolframAlpha', url: 'https://wolframalpha.com', desc: '数学/物理/化学问题秒出答案' },
+    ],
+  },
+  {
+    id: 'design',
+    name: '设计资源',
+    icon: '🖌️',
+    sites: [
+      { id: 'design-1', title: 'Multiavatar', url: 'https://multiavatar.com', desc: '多元化头像生成器' },
+      { id: 'design-2', title: 'Dribbble', url: 'https://dribbble.com', desc: '设计师作品展示' },
+      { id: 'design-3', title: 'Figma', url: 'https://www.figma.com', desc: '在线设计协作工具' },
+      { id: 'design-4', title: 'Unsplash', url: 'https://unsplash.com', desc: '免费高清图片' },
+      { id: 'design-5', title: 'iconfont', url: 'https://www.iconfont.cn', desc: '阿里图标库' },
+      { id: 'design-6', title: 'ColorHunt', url: 'https://colorhunt.co', desc: '配色方案' },
+      { id: 'design-7', title: 'Pexels', url: 'https://www.pexels.com', desc: '免费图片视频素材' },
+      { id: 'design-8', title: '百度图片', url: 'https://image.baidu.com', desc: '百度图片搜索' },
+    ],
+  },
+  {
+    id: 'fun',
+    name: '好玩',
+    icon: '🌍',
+    sites: [
+      { id: 'fun-1', title: 'Flightradar24', url: 'https://flightradar24.com', desc: '实时看全世界飞机在天上飞哪儿' },
+      { id: 'fun-2', title: 'Radio Garden', url: 'https://radio.garden', desc: '地球仪上随便点，听全世界正在播的电台' },
+      { id: 'fun-3', title: 'Drive & Listen', url: 'https://driveandlisten.herokuapp.com', desc: '边开车边听各国城市街景' },
+      { id: 'fun-4', title: 'Google Earth', url: 'https://www.google.com/earth/studio', desc: 'Google 地球动画工作室' },
+    ],
+  },
+  {
+    id: 'media',
+    name: '影音娱乐',
+    icon: '📺',
+    sites: [
+      { id: 'media-1', title: 'Bilibili', url: 'https://www.bilibili.com', desc: '视频弹幕网站' },
+      { id: 'media-2', title: 'YouTube', url: 'https://www.youtube.com', desc: '全球视频平台' },
+      { id: 'media-3', title: '网易云音乐', url: 'https://music.163.com', desc: '在线音乐' },
+      { id: 'media-4', title: 'Spotify', url: 'https://www.spotify.com', desc: '流媒体音乐' },
+      { id: 'media-5', title: '天涯', url: 'https://www.tianya.im', desc: '天涯社区' },
+      { id: 'media-6', title: '1Music', url: 'https://1music.cc/zh-CN', desc: '免费在线音乐' },
+      { id: 'media-7', title: 'IYF', url: 'https://www.iyf.tv', desc: '在线影视' },
+    ],
+  },
+  {
+    id: 'video-res',
+    name: '影视资源',
+    icon: '🎞️',
+    sites: [
+      { id: 'vr-1', title: '人人影视', url: 'https://www.renren.pro', desc: '聚合全网高清影视在线观看' },
+      { id: 'vr-2', title: '6v电影', url: 'https://www.66ss.org', desc: '新版6v电影（旧版66影视）免费电影下载' },
+      { id: 'vr-3', title: '泥巴影院', url: 'https://www.nbyy.cc/class.html?channel=movie', desc: '海外华人在线影院' },
+      { id: 'vr-4', title: 'Gazes', url: 'https://gazes.store/filter', desc: '动漫在线观看' },
+      { id: 'vr-5', title: 'sxhm', url: 'https://www.sxhm.com/online.html', desc: '在线影视' },
+      { id: 'vr-6', title: '小蜜蜂影院', url: 'https://www.xmfyy.com', desc: '免费在线观看电影电视剧' },
+      { id: 'vr-7', title: '不想看片', url: 'https://v.bxkp.org', desc: '全球影视资源' },
+    ],
+  },
+  {
+    id: 'ebook',
+    name: '电子书',
+    icon: '📖',
+    sites: [
+      { id: 'eb-1', title: 'Ebook Treasure', url: 'https://jbiaojerry.github.io/ebook-treasure-chest/', desc: '电子书资源宝箱' },
+      { id: 'eb-2', title: 'Gutenberg', url: 'https://gutenberg.org', desc: '7万多本经典老书免费下载' },
+    ],
+  },
+]

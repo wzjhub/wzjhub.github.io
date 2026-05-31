@@ -138,11 +138,34 @@ body {
 
 /* Fix Antd input focus bar */
 .ant-input-affix-wrapper-focused::after,
-.ant-input-focused::after {
+.ant-input-focused::after,
+.ant-input-affix-wrapper::after,
+.ant-input::after {
   display: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .ant-input-affix-wrapper:focus,
-.ant-input-affix-wrapper-focused {
+.ant-input-affix-wrapper-focused,
+.ant-input-affix-wrapper:focus-within {
   box-shadow: none !important;
+}
+
+/* Remove the blue active bar under antd components */
+.ant-input-affix-wrapper-status-error::after,
+.ant-input-outlined:focus-within::after,
+.ant-input-outlined::after {
+  display: none !important;
+}
+
+/* Hide all horizontal scrollbars in nav mobile tabs */
+.nav-mobile-tabs *::-webkit-scrollbar {
+  display: none !important;
+  height: 0 !important;
+}
+
+.nav-mobile-tabs * {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }

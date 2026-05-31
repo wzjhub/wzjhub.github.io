@@ -27,8 +27,8 @@ const SearchBar = () => {
 
   return (
     <div>
-      {/* Engine tabs - centered */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 0, marginBottom: 10, overflowX: 'auto' }}>
+      {/* Engine tabs - centered, scrollable on mobile */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 0, marginBottom: 10, overflowX: 'auto', WebkitOverflowScrolling: 'touch' as any, msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
         {engines.map((e) => (
           <div
             key={e.value}
@@ -42,6 +42,7 @@ const SearchBar = () => {
               borderBottom: engine === e.value ? `2px solid ${e.color}` : '2px solid transparent',
               transition: 'all 0.2s',
               whiteSpace: 'nowrap',
+              flexShrink: 0,
             }}
           >
             {e.label}
