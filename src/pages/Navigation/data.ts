@@ -143,7 +143,8 @@ export const defaultCategories: Category[] = [
     sites: [
       { id: 'dl-1', title: 'Cobalt', url: 'https://cobalt.tools', desc: 'YouTube/Instagram/TikTok 一键下载，无水印' },
       { id: 'dl-2', title: 'DownloadHD', url: 'https://downloadhd.net', desc: '高清视频下载' },
-      { id: 'dl-3', title: 'X/Twitter 下载', url: 'https://x-twitter-downloader.com', desc: 'Twitter/X 视频下载器' },
+      { id: 'dl-3', title: 'X-Twitter Downloader', url: 'https://x-twitter-downloader.com', desc: 'Twitter/X 视频免费高清下载' },
+      { id: 'dl-4', title: 'DataTool', url: 'https://www.datatool.vip/zh', desc: '多平台视频下载器（Twitter/TikTok/Instagram等）' },
     ],
   },
   {
@@ -169,7 +170,6 @@ export const defaultCategories: Category[] = [
       { id: 'arc-3', title: 'JustWatch', url: 'https://justwatch.com', desc: '查电影电视剧在哪个平台能看' },
       { id: 'arc-4', title: 'DuckDuckGo', url: 'https://duckduckgo.com', desc: '隐私搜索引擎，不追踪用户' },
       { id: 'arc-5', title: 'NewsNow', url: 'https://newsnow.busiyi.world', desc: '实时新闻聚合' },
-      { id: 'arc-6', title: 'DataTool', url: 'https://www.datatool.vip/zh', desc: '数据工具集合' },
       { id: 'arc-7', title: 'Yandex', url: 'https://yandex.com', desc: '俄罗斯搜索引擎' },
     ],
   },
@@ -277,6 +277,7 @@ export const defaultCategories: Category[] = [
       { id: 'media-5', title: '天涯', url: 'https://www.tianya.im', desc: '天涯社区' },
       { id: 'media-6', title: '1Music', url: 'https://1music.cc/zh-CN', desc: '免费在线音乐' },
       { id: 'media-7', title: 'IYF', url: 'https://www.iyf.tv', desc: '在线影视' },
+      { id: 'media-8', title: '陕西历史博物馆', url: 'https://www.sxhm.com/online.html', desc: '在线影视' },
     ],
   },
   {
@@ -287,8 +288,7 @@ export const defaultCategories: Category[] = [
       { id: 'vr-1', title: '人人影视', url: 'https://www.renren.pro', desc: '聚合全网高清影视在线观看' },
       { id: 'vr-2', title: '6v电影', url: 'https://www.66ss.org', desc: '新版6v电影（旧版66影视）免费电影下载' },
       { id: 'vr-3', title: '泥巴影院', url: 'https://www.nbyy.cc/class.html?channel=movie', desc: '海外华人在线影院' },
-      { id: 'vr-4', title: 'Gazes', url: 'https://gazes.store/filter', desc: '动漫在线观看' },
-      { id: 'vr-5', title: 'sxhm', url: 'https://www.sxhm.com/online.html', desc: '在线影视' },
+      { id: 'vr-4', title: '注视影视', url: 'https://gazes.store/filter', desc: '免费在线观影' },
       { id: 'vr-6', title: '小蜜蜂影院', url: 'https://www.xmfyy.com', desc: '免费在线观看电影电视剧' },
       { id: 'vr-7', title: '不想看片', url: 'https://v.bxkp.org', desc: '全球影视资源' },
     ],
@@ -298,7 +298,7 @@ export const defaultCategories: Category[] = [
     name: '电子书',
     icon: '📖',
     sites: [
-      { id: 'eb-1', title: 'Ebook Treasure', url: 'https://jbiaojerry.github.io/ebook-treasure-chest/', desc: '电子书资源宝箱' },
+      { id: 'eb-1', title: '电子书下载宝库', url: 'https://jbiaojerry.github.io/ebook-treasure-chest/', desc: '24000+本电子书免费下载，支持EPUB/MOBI/AZW3' },
       { id: 'eb-2', title: 'Gutenberg', url: 'https://gutenberg.org', desc: '7万多本经典老书免费下载' },
     ],
   },
