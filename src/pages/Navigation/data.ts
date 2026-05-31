@@ -37,6 +37,7 @@ export const defaultCategories: Category[] = [
       { id: 'plat-5', title: '飞书', url: 'https://accounts.feishu.cn', desc: '字节跳动协作办公平台' },
       { id: 'plat-6', title: '个人服务器', url: 'http://47.103.213.167', desc: '个人云服务器' },
       { id: 'plat-7', title: '轻量应用服务器', url: 'https://swasnext.console.aliyun.com/servers/cn-shanghai', desc: '阿里云轻量服务器控制台' },
+      { id: 'plat-8', title: '魔戒', url: 'https://mojie.ws/#/knowledge', desc: '魔戒' },
     ],
   },
   {
