@@ -24,6 +24,8 @@ export const defaultCategories: Category[] = [
       { id: 'portal-4', title: 'AlternativeTo', url: 'https://alternativeto.net', desc: '搜任何付费软件的免费开源替代品' },
       { id: 'portal-5', title: 'TinyWow', url: 'https://tinywow.com', desc: '100+免费在线工具，压缩/转换/编辑全都有' },
       { id: 'portal-6', title: 'AI星踪岛', url: 'https://aixzd.com', desc: '国内专业 AI 内容平台，聚焦全球 AI 工具与机器人产业' },
+      { id: 'portal-7', title: 'OpenAlternative', url: 'https://openalternative.co', desc: '1000+ 付费软件的开源免费替代品合集' },
+      { id: 'portal-8', title: 'FMHY', url: 'https://fmhy.net', desc: '全网免费资源导航，Reddit 社区维护，近三万条链接' },
     ],
   },
   {
@@ -95,6 +97,7 @@ export const defaultCategories: Category[] = [
       { id: 'aiv-4', title: 'SadTalker', url: 'https://sadtalker.ai', desc: '静态照片变说话视频' },
       { id: 'aiv-5', title: 'DeepSwap', url: 'https://deepswap.ai', desc: 'AI 换脸，1 分钟出片' },
       { id: 'aiv-6', title: 'Opus Pro', url: 'https://opus.pro', desc: 'AI 剪辑短视频，自动找高光片段' },
+      { id: 'aiv-7', title: 'MovieFlow', url: 'https://movieflow.ai/home', desc: 'AI 长视频生成平台，文字生成 1-5 分钟连贯影片' },
     ],
   },
   {
@@ -117,6 +120,7 @@ export const defaultCategories: Category[] = [
       { id: 'aicd-3', title: 'v0', url: 'https://v0.dev', desc: 'Vercel AI 前端生成器，描述即页面' },
       { id: 'aicd-4', title: 'Replit', url: 'https://replit.com', desc: '浏览器里写代码+AI 辅助+一键部署' },
       { id: 'aicd-5', title: 'tldraw Make Real', url: 'https://tldraw.com/make-real', desc: '画草图 AI 自动生成真实网页' },
+      { id: 'aicd-6', title: 'EasyCode', url: 'https://easycode.bot', desc: 'AI 编程平台，非开发者也能把想法变成应用' },
     ],
   },
   {
@@ -259,6 +263,16 @@ export const defaultCategories: Category[] = [
       { id: 'learn-7', title: '菜鸟教程', url: 'https://www.runoob.com', desc: '编程入门教程' },
       { id: 'learn-8', title: '笔记', url: 'https://www.biji.com/note', desc: '在线笔记工具' },
       { id: 'learn-10', title: 'WolframAlpha', url: 'https://wolframalpha.com', desc: '数学/物理/化学问题秒出答案' },
+      { id: 'learn-11', title: 'Anthropic 学院', url: 'https://anthropic.skilljar.com', desc: 'Anthropic 官方免费 AI 培训课程' },
+      { id: 'learn-12', title: 'Google AI 学习', url: 'https://grow.google/ai', desc: 'Google 官方免费 AI 学习资源' },
+      { id: 'learn-13', title: 'Meta AI 资源', url: 'https://ai.meta.com/resources/', desc: 'Meta 官方 AI 学习资源' },
+      { id: 'learn-14', title: 'NVIDIA CUDA', url: 'https://developer.nvidia.com/cuda', desc: 'NVIDIA 官方 CUDA 开发者学习' },
+      { id: 'learn-15', title: 'Microsoft AI 培训', url: 'https://learn.microsoft.com/en-us/training/', desc: '微软官方免费 AI 培训课程' },
+      { id: 'learn-16', title: 'OpenAI Academy', url: 'https://academy.openai.com', desc: 'OpenAI 官方学习平台' },
+      { id: 'learn-17', title: 'IBM SkillsBuild', url: 'https://skillsbuild.org', desc: 'IBM 免费技能培训平台' },
+      { id: 'learn-18', title: 'AWS Skill Builder', url: 'https://skillbuilder.aws', desc: 'AWS 官方免费云/AI 培训' },
+      { id: 'learn-19', title: 'DeepLearning.AI', url: 'https://deeplearning.ai', desc: '吴恩达深度学习课程平台' },
+      { id: 'learn-20', title: 'HuggingFace Learn', url: 'https://huggingface.co/learn', desc: 'HuggingFace 官方免费 AI 课程' },
     ],
   },
   {
@@ -314,6 +328,7 @@ export const defaultCategories: Category[] = [
       { id: 'vr-4', title: '注视影视', url: 'https://gazes.store/filter', desc: '免费在线观影' },
       { id: 'vr-6', title: '小蜜蜂影院', url: 'https://www.xmfyy.com', desc: '免费在线观看电影电视剧' },
       { id: 'vr-7', title: '不想看片', url: 'https://v.bxkp.org', desc: '全球影视资源' },
+      { id: 'vr-8', title: 'i8K影视导航', url: 'https://i8k.tv', desc: '最全免费在线影视网站导航' },
     ],
   },
   {
