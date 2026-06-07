@@ -23,6 +23,7 @@ export const defaultCategories: Category[] = [
       { id: 'portal-3', title: 'iyouhun', url: 'https://app.iyouhun.com', desc: '电视盒子' },
       { id: 'portal-4', title: 'AlternativeTo', url: 'https://alternativeto.net', desc: '搜任何付费软件的免费开源替代品' },
       { id: 'portal-5', title: 'TinyWow', url: 'https://tinywow.com', desc: '100+免费在线工具，压缩/转换/编辑全都有' },
+      { id: 'portal-6', title: 'AI星踪岛', url: 'https://aixzd.com', desc: '国内专业 AI 内容平台，聚焦全球 AI 工具与机器人产业' },
     ],
   },
   {
@@ -38,6 +39,8 @@ export const defaultCategories: Category[] = [
       { id: 'plat-6', title: '个人服务器', url: 'http://47.103.213.167', desc: '个人云服务器' },
       { id: 'plat-7', title: '轻量应用服务器', url: 'https://swasnext.console.aliyun.com/servers/cn-shanghai', desc: '阿里云轻量服务器控制台' },
       { id: 'plat-8', title: '魔戒', url: 'https://mojie.ws/#/knowledge', desc: '魔戒' },
+      { id: 'plat-9', title: '智谱 AI 开放平台', url: 'https://open.bigmodel.cn', desc: 'GLM-4-Flash 永久免费，128K 上下文' },
+      { id: 'plat-10', title: '硅基流动', url: 'https://siliconflow.cn', desc: 'Qwen2.5/DeepSeek 等开源模型免费 API' },
     ],
   },
   {
@@ -77,6 +80,7 @@ export const defaultCategories: Category[] = [
       { id: 'aig-3', title: 'Magnific', url: 'https://magnific.ai', desc: 'AI 无限放大图片，细节自动补全' },
       { id: 'aig-4', title: 'Clipdrop', url: 'https://clipdrop.co', desc: 'AI 一键去背景/补光/擦除' },
       { id: 'aig-5', title: 'HuggingFace Spaces', url: 'https://huggingface.co/spaces', desc: '开源 AI 模型免费试玩场' },
+      { id: 'aig-6', title: 'TopAI', url: 'https://topai.tools', desc: '10000+ 全球顶级提示词案例，覆盖文生图/视频/音频' },
     ],
   },
   {
@@ -135,6 +139,12 @@ export const defaultCategories: Category[] = [
       { id: 'img-2', title: 'Remove.bg', url: 'https://remove.bg', desc: '照片一键去背景，AI 准得离谱' },
       { id: 'img-3', title: 'Cleanup.pictures', url: 'https://cleanup.pictures', desc: '照片里不想看到的东西直接擦掉' },
       { id: 'img-4', title: 'Unscreen', url: 'https://unscreen.com', desc: '视频一键去背景，做出透明人物特效' },
+      { id: 'img-5', title: '视频去水印', url: 'https://online-video-cutter.com/cn/remove-logo', desc: '在线视频去水印工具' },
+      { id: 'img-6', title: '可灵/即梦去水印', url: 'https://clearcat.lingxiangtools.top', desc: '可灵、即梦 AI 生成内容去水印' },
+      { id: 'img-7', title: 'MarkCut', url: 'https://markcut.com', desc: 'NotebookLM 去水印工具' },
+      { id: 'img-8', title: 'Figtool', url: 'https://figtool.com', desc: 'Gemini 去水印 & 在线文档转换工具' },
+      { id: 'img-9', title: '豆包去水印', url: 'https://cagetu.com', desc: '豆包 AI 生成内容去水印' },
+      { id: 'img-10', title: '加水印', url: 'https://jiashuiyin.com', desc: '在线图片/视频加水印工具' },
     ],
   },
   {
@@ -201,6 +211,15 @@ export const defaultCategories: Category[] = [
       { id: 'dev-9', title: 'Stack Overflow', url: 'https://stackoverflow.com', desc: '开发者问答社区' },
       { id: 'dev-10', title: 'MDN', url: 'https://developer.mozilla.org', desc: 'Web 开发文档' },
       { id: 'dev-11', title: 'JetBrains', url: 'https://www.jetbrains.com/products/', desc: 'IDE 开发工具全家桶' },
+      { id: 'dev-12', title: 'OpenClaw Docs', url: 'https://docs.openclaw.ai/', desc: 'OpenClaw 官方文档（Skills）' },
+      { id: 'dev-13', title: 'Skills.sh', url: 'https://skills.sh/', desc: '27000+ AI Skills 库' },
+      { id: 'dev-14', title: 'ClawHub', url: 'https://clawhub.com', desc: 'OpenClaw 官方注册表' },
+      { id: 'dev-15', title: 'Awesome OpenClaw Skills', url: 'https://github.com/VoltAgent/awesome-openclaw-skills', desc: '开源 Skills 库合集' },
+      { id: 'dev-16', title: '腾讯 SkillHub', url: 'https://skillhub.tencent.com/', desc: '腾讯 AI Skills 平台' },
+      { id: 'dev-17', title: 'Agent Skills (Addy Osmani)', url: 'https://github.com/addyosmani/agent-skills', desc: 'Google Gemini 团队主管的 AI 编程技能库，31k+ Stars' },
+      { id: 'dev-18', title: 'Skills (Matt Pocock)', url: 'https://github.com/mattpocock/skills', desc: 'TypeScript 男巫的工程实践技能包，51k+ Stars' },
+      { id: 'dev-19', title: 'Scrapling', url: 'https://github.com/D4Vinci/Scrapling', desc: '零反爬网页爬虫，绕过 Cloudflare，比 BS4 快 774 倍' },
+      { id: 'dev-20', title: 'World Monitor', url: 'https://github.com/koala73/worldmonitor', desc: '实时全球情报仪表板，追踪冲突/军事/市场信号' },
     ],
   },
   {
@@ -222,6 +241,7 @@ export const defaultCategories: Category[] = [
       { id: 'tools-12', title: 'PixPin', url: 'https://pixpin.cn/docs/start/quick-start', desc: '截图贴图工具' },
       { id: 'tools-13', title: 'Ditto', url: 'https://sabrogden.github.io/Ditto/', desc: '剪贴板增强管理工具' },
       { id: 'tools-14', title: 'Infinity 新标签页', url: 'https://microsoftedge.microsoft.com/addons/detail/infinity-%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5-pro/hajlmbnnniemimmaehcefkamdadpjlfa', desc: 'Edge 新标签页扩展' },
+      { id: 'tools-15', title: 'Aibijia', url: 'https://aibijia.org', desc: 'AI 订阅比价平台，ChatGPT/Claude/Gemini 价格对比' },
     ],
   },
   {
@@ -253,6 +273,7 @@ export const defaultCategories: Category[] = [
       { id: 'design-6', title: 'ColorHunt', url: 'https://colorhunt.co', desc: '配色方案' },
       { id: 'design-7', title: 'Pexels', url: 'https://www.pexels.com', desc: '免费图片视频素材' },
       { id: 'design-8', title: '百度图片', url: 'https://image.baidu.com', desc: '百度图片搜索' },
+      { id: 'design-9', title: 'PNGimg', url: 'https://pngimg.com', desc: '全球最大透明背景图库，11万+ PNG 免费下载' },
     ],
   },
   {
