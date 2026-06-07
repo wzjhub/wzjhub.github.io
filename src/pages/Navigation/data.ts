@@ -41,6 +41,7 @@ export const defaultCategories: Category[] = [
       { id: 'plat-8', title: '魔戒', url: 'https://mojie.ws/#/knowledge', desc: '魔戒' },
       { id: 'plat-9', title: '智谱 AI 开放平台', url: 'https://open.bigmodel.cn', desc: 'GLM-4-Flash 永久免费，128K 上下文' },
       { id: 'plat-10', title: '硅基流动', url: 'https://siliconflow.cn', desc: 'Qwen2.5/DeepSeek 等开源模型免费 API' },
+      { id: 'plat-11', title: '商汤日日新', url: 'https://www.sensenova.cn/token-plan', desc: 'DeepSeek-V4 免费公测，每5小时500次，可接入 Claude Code' },
     ],
   },
   {
