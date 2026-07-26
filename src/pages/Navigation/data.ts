@@ -121,6 +121,10 @@ export const defaultCategories: Category[] = [
       { id: 'aicd-4', title: 'Replit', url: 'https://replit.com', desc: '浏览器里写代码+AI 辅助+一键部署' },
       { id: 'aicd-5', title: 'tldraw Make Real', url: 'https://tldraw.com/make-real', desc: '画草图 AI 自动生成真实网页' },
       { id: 'aicd-6', title: 'EasyCode', url: 'https://easycode.bot', desc: 'AI 编程平台，非开发者也能把想法变成应用' },
+      { id: 'aicd-7', title: 'Agnes AI', url: 'https://agnes-ai.com', desc: 'AI 编程助手' },
+      { id: 'aicd-8', title: 'CodeBuddy', url: 'https://www.codebuddy.cn', desc: '腾讯 AI 编程助手' },
+      { id: 'aicd-9', title: '腾讯元器', url: 'https://agent.qq.com', desc: '腾讯 AI Agent 平台' },
+      { id: 'aicd-10', title: 'Qoder', url: 'https://qoder.com/zh', desc: 'AI 编程工具' },
     ],
   },
   {
@@ -141,6 +145,7 @@ export const defaultCategories: Category[] = [
     icon: '✂️',
     sites: [
       { id: 'img-1', title: 'Photopea', url: 'https://photopea.com', desc: '浏览器里的完整版 Photoshop，免费' },
+      { id: 'img-11', title: 'Pikimov', url: 'https://pikimov.com', desc: '免费在线动效/视频编辑器，浏览器版 After Effects' },
       { id: 'img-2', title: 'Remove.bg', url: 'https://remove.bg', desc: '照片一键去背景，AI 准得离谱' },
       { id: 'img-3', title: 'Cleanup.pictures', url: 'https://cleanup.pictures', desc: '照片里不想看到的东西直接擦掉' },
       { id: 'img-4', title: 'Unscreen', url: 'https://unscreen.com', desc: '视频一键去背景，做出透明人物特效' },
@@ -329,6 +334,13 @@ export const defaultCategories: Category[] = [
       { id: 'vr-6', title: '小蜜蜂影院', url: 'https://www.xmfyy.com', desc: '免费在线观看电影电视剧' },
       { id: 'vr-7', title: '不想看片', url: 'https://v.bxkp.org', desc: '全球影视资源' },
       { id: 'vr-8', title: 'i8K影视导航', url: 'https://i8k.tv', desc: '最全免费在线影视网站导航' },
+      { id: 'vr-9', title: 'Tubi', url: 'https://tubitv.com', desc: '免费正版影视平台，海量电影电视剧' },
+      { id: 'vr-10', title: 'LIBVIO', url: 'https://www.libvio.lat', desc: '在线影视资源站' },
+      { id: 'vr-11', title: 'Plex', url: 'https://watch.plex.tv', desc: '免费流媒体影视点播' },
+      { id: 'vr-12', title: 'FameLack', url: 'https://famelack.com', desc: '在线免费观影' },
+      { id: 'vr-13', title: 'SidHub', url: 'https://sidhub.cc', desc: '高清影视资源站' },
+      { id: 'vr-14', title: '聚合BD', url: 'https://www.juhebd.com', desc: '聚合影视资源搜索' },
+      { id: 'vr-15', title: '黑马磁力', url: 'https://heimacili.org', desc: '磁力资源搜索引擎' },
     ],
   },
   {
