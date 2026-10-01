@@ -192,6 +192,8 @@ export const defaultCategories: Category[] = [
       { id: 'arc-4', title: 'DuckDuckGo', url: 'https://duckduckgo.com', desc: '隐私搜索引擎，不追踪用户' },
       { id: 'arc-5', title: 'NewsNow', url: 'https://newsnow.busiyi.world', desc: '实时新闻聚合' },
       { id: 'arc-7', title: 'Yandex', url: 'https://yandex.com', desc: '俄罗斯搜索引擎' },
+      { id: 'arc-8', title: '飞搜', url: 'https://feisou.app', desc: '飞书公开文档搜索引擎' },
+      { id: 'arc-9', title: 'Browse.sh', url: 'https://browse.sh', desc: 'AI Agent 浏览器自动化技能库，100+ Skills' },
     ],
   },
   {
@@ -281,6 +283,14 @@ export const defaultCategories: Category[] = [
     ],
   },
   {
+    id: 'finance',
+    name: '财经资讯',
+    icon: '💹',
+    sites: [
+      { id: 'fin-1', title: '汇通财经', url: 'https://www.fx678.com', desc: '外汇黄金门户网站，实时行情资讯' },
+    ],
+  },
+  {
     id: 'design',
     name: '设计资源',
     icon: '🖌️',
@@ -341,6 +351,7 @@ export const defaultCategories: Category[] = [
       { id: 'vr-13', title: 'SidHub', url: 'https://sidhub.cc', desc: '高清影视资源站' },
       { id: 'vr-14', title: '聚合BD', url: 'https://www.juhebd.com', desc: '聚合影视资源搜索' },
       { id: 'vr-15', title: '黑马磁力', url: 'https://heimacili.org', desc: '磁力资源搜索引擎' },
+      { id: 'vr-16', title: '宝藏岛TV', url: 'https://tv.baozangdh.com', desc: '在线影视资源站' },
     ],
   },
   {
