@@ -19,16 +19,24 @@ import {
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import SearchBar from '../../components/SearchBar'
-import { defaultCategories } from './data'
+import { defaultCategories, DATA_VERSION } from './data'
 import type { SiteItem, Category } from './data'
 
 const { Title } = Typography
 
 const STORAGE_KEY = 'nav_categories'
+const VERSION_KEY = 'nav_data_version'
 const CLICKS_KEY = 'nav_clicks'
 
 const loadCategories = (): Category[] => {
   try {
+    const savedVersion = localStorage.getItem(VERSION_KEY)
+    // 版本不匹配时，清除旧数据，使用最新默认数据
+    if (savedVersion !== DATA_VERSION) {
+      localStorage.removeItem(STORAGE_KEY)
+      localStorage.setItem(VERSION_KEY, DATA_VERSION)
+      return defaultCategories
+    }
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) return JSON.parse(saved)
   } catch {}
@@ -37,6 +45,7 @@ const loadCategories = (): Category[] => {
 
 const saveCategories = (cats: Category[]) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cats))
+  localStorage.setItem(VERSION_KEY, DATA_VERSION)
 }
 
 const getClickCounts = (): Record<string, number> => {

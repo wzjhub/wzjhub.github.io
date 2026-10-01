@@ -12,6 +12,9 @@ export interface Category {
   sites: SiteItem[]
 }
 
+// 数据版本号：每次更新 data.ts 内容时递增此版本号，用户刷新页面会自动获取最新数据
+export const DATA_VERSION = '2026-10-01-v1'
+
 export const defaultCategories: Category[] = [
   {
     id: 'portal',
