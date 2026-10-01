@@ -13,7 +13,7 @@ export interface Category {
 }
 
 // 数据版本号：每次更新 data.ts 内容时递增此版本号，用户刷新页面会自动获取最新数据
-export const DATA_VERSION = '2026-10-01-v1'
+export const DATA_VERSION = '2026-10-01-v2'
 
 export const defaultCategories: Category[] = [
   {
@@ -40,6 +40,7 @@ export const defaultCategories: Category[] = [
       { id: 'plat-2', title: '火山引擎', url: 'https://console.volcengine.com', desc: '字节跳动云服务平台' },
       { id: 'plat-3', title: '阿里云盘', url: 'https://www.aliyundrive.com', desc: '阿里云盘网盘' },
       { id: 'plat-4', title: '百度网盘', url: 'https://pan.baidu.com', desc: '百度云存储' },
+      { id: 'plat-12', title: 'MEGA', url: 'https://mega.nz', desc: '端到端加密云存储，免费 20GB' },
       { id: 'plat-5', title: '飞书', url: 'https://accounts.feishu.cn', desc: '字节跳动协作办公平台' },
       { id: 'plat-6', title: '个人服务器', url: 'http://47.103.213.167', desc: '个人云服务器' },
       { id: 'plat-7', title: '轻量应用服务器', url: 'https://swasnext.console.aliyun.com/servers/cn-shanghai', desc: '阿里云轻量服务器控制台' },
