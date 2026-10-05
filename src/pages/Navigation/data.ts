@@ -13,7 +13,7 @@ export interface Category {
 }
 
 // 数据版本号：每次更新 data.ts 内容时递增此版本号，用户刷新页面会自动获取最新数据
-export const DATA_VERSION = '2026-10-01-v2'
+export const DATA_VERSION = '2026-10-05-v1'
 
 export const defaultCategories: Category[] = [
   {
@@ -284,6 +284,12 @@ export const defaultCategories: Category[] = [
       { id: 'learn-18', title: 'AWS Skill Builder', url: 'https://skillbuilder.aws', desc: 'AWS 官方免费云/AI 培训' },
       { id: 'learn-19', title: 'DeepLearning.AI', url: 'https://deeplearning.ai', desc: '吴恩达深度学习课程平台' },
       { id: 'learn-20', title: 'HuggingFace Learn', url: 'https://huggingface.co/learn', desc: 'HuggingFace 官方免费 AI 课程' },
+      { id: 'learn-21', title: '国家教育云平台', url: 'https://www.eduyun.cn', desc: '海量优质教学资源，覆盖一年级到高三' },
+      { id: 'learn-22', title: '智慧中小学', url: 'https://basic.smartedu.cn', desc: '课本配套课程全都有，课堂没听懂在家随时巩固' },
+      { id: 'learn-23', title: '国家智慧教育读书平台', url: 'https://reading.smartedu.cn', desc: '海量名著电子书、有声读物，课外阅读资源免费畅读' },
+      { id: 'learn-24', title: '国家终身教育智慧教育平台', url: 'https://lifelong.smartedu.cn', desc: '人文历史艺术科普内容齐全，全年龄段免费学习' },
+      { id: 'learn-25', title: '国家高等教育智慧教育平台', url: 'https://higher.smartedu.cn', desc: '上万门高校精品公开课，高中生可用来拓展知识面' },
+      { id: 'learn-26', title: '国家职业教育智慧教育平台', url: 'https://vocational.smartedu.cn', desc: '技能科普实训课程丰富，帮助了解各类专业知识' },
     ],
   },
   {
