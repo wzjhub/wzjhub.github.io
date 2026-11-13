@@ -13,7 +13,7 @@ export interface Category {
 }
 
 // 数据版本号：每次更新 data.ts 内容时递增此版本号，用户刷新页面会自动获取最新数据
-export const DATA_VERSION = '2026-10-05-v1'
+export const DATA_VERSION = '2026-11-13-v1'
 
 export const defaultCategories: Category[] = [
   {
@@ -29,6 +29,7 @@ export const defaultCategories: Category[] = [
       { id: 'portal-6', title: 'AI星踪岛', url: 'https://aixzd.com', desc: '国内专业 AI 内容平台，聚焦全球 AI 工具与机器人产业' },
       { id: 'portal-7', title: 'OpenAlternative', url: 'https://openalternative.co', desc: '1000+ 付费软件的开源免费替代品合集' },
       { id: 'portal-8', title: 'FMHY', url: 'https://fmhy.net', desc: '全网免费资源导航，Reddit 社区维护，近三万条链接' },
+      { id: 'portal-9', title: '二闪闪', url: 'https://eshuanshuan.eu.cc/products/7516153597902501334', desc: '二闪闪商品页' },
     ],
   },
   {
@@ -48,6 +49,8 @@ export const defaultCategories: Category[] = [
       { id: 'plat-9', title: '智谱 AI 开放平台', url: 'https://open.bigmodel.cn', desc: 'GLM-4-Flash 永久免费，128K 上下文' },
       { id: 'plat-10', title: '硅基流动', url: 'https://siliconflow.cn', desc: 'Qwen2.5/DeepSeek 等开源模型免费 API' },
       { id: 'plat-11', title: '商汤日日新', url: 'https://www.sensenova.cn/token-plan', desc: 'DeepSeek-V4 免费公测，每5小时500次，可接入 Claude Code' },
+      { id: 'plat-13', title: '火山引擎邀请', url: 'https://volcengine.cgref.cn/1104', desc: '火山引擎邀请注册链接，新用户可领取免费额度' },
+      { id: 'plat-14', title: 'BlueV 免费 Token', url: 'https://bluev.fun/free-tokens', desc: '免费 AI Token 领取平台，支持多种主流模型' },
     ],
   },
   {
@@ -102,6 +105,7 @@ export const defaultCategories: Category[] = [
       { id: 'aiv-5', title: 'DeepSwap', url: 'https://deepswap.ai', desc: 'AI 换脸，1 分钟出片' },
       { id: 'aiv-6', title: 'Opus Pro', url: 'https://opus.pro', desc: 'AI 剪辑短视频，自动找高光片段' },
       { id: 'aiv-7', title: 'MovieFlow', url: 'https://movieflow.ai/home', desc: 'AI 长视频生成平台，文字生成 1-5 分钟连贯影片' },
+      { id: 'aiv-8', title: 'VidoGrid', url: 'https://vidogrid.ai', desc: 'AI 视频/图像/语音一体化工作室，聚合 Veo、Sora、Kling 等顶级模型' },
     ],
   },
   {
@@ -129,6 +133,8 @@ export const defaultCategories: Category[] = [
       { id: 'aicd-8', title: 'CodeBuddy', url: 'https://www.codebuddy.cn', desc: '腾讯 AI 编程助手' },
       { id: 'aicd-9', title: '腾讯元器', url: 'https://agent.qq.com', desc: '腾讯 AI Agent 平台' },
       { id: 'aicd-10', title: 'Qoder', url: 'https://qoder.com/zh', desc: 'AI 编程工具' },
+      { id: 'aicd-11', title: 'MotionSites AI', url: 'https://motionsites.ai', desc: 'AI 动效网站生成器，输入描述自动生成带动画效果的网页' },
+      { id: 'aicd-12', title: 'free-claude-code', url: 'https://github.com/Alishahryar1/free-claude-code', desc: 'GitHub 开源方案，免费使用 Claude Code 的方法汇总' },
     ],
   },
   {
@@ -141,6 +147,7 @@ export const defaultCategories: Category[] = [
       { id: 'aio-3', title: 'Notion AI', url: 'https://notion.so/product/ai', desc: 'Notion AI 免费写+总结+翻译' },
       { id: 'aio-4', title: 'Otter', url: 'https://otter.ai', desc: '会议实时转文字，免费每月 300 分钟' },
       { id: 'aio-5', title: 'Jasper', url: 'https://jasper.ai/free', desc: 'AI 写作助手，免费版够日常' },
+      { id: 'aio-6', title: 'BetterOPC AI 转型', url: 'https://betteropc.com/ai-transformation', desc: 'AI 商业转型指南，帮助企业落地 AI 策略' },
     ],
   },
   {
@@ -198,6 +205,7 @@ export const defaultCategories: Category[] = [
       { id: 'arc-7', title: 'Yandex', url: 'https://yandex.com', desc: '俄罗斯搜索引擎' },
       { id: 'arc-8', title: '飞搜', url: 'https://feisou.app', desc: '飞书公开文档搜索引擎' },
       { id: 'arc-9', title: 'Browse.sh', url: 'https://browse.sh', desc: 'AI Agent 浏览器自动化技能库，100+ Skills' },
+      { id: 'arc-10', title: '海搜', url: 'https://haisou.cc/', desc: '多网盘资源搜索引擎，支持阿里/百度/夸克/迅雷等，实时检测有效性' },
     ],
   },
   {
@@ -236,6 +244,7 @@ export const defaultCategories: Category[] = [
       { id: 'dev-18', title: 'Skills (Matt Pocock)', url: 'https://github.com/mattpocock/skills', desc: 'TypeScript 男巫的工程实践技能包，51k+ Stars' },
       { id: 'dev-19', title: 'Scrapling', url: 'https://github.com/D4Vinci/Scrapling', desc: '零反爬网页爬虫，绕过 Cloudflare，比 BS4 快 774 倍' },
       { id: 'dev-20', title: 'World Monitor', url: 'https://github.com/koala73/worldmonitor', desc: '实时全球情报仪表板，追踪冲突/军事/市场信号' },
+      { id: 'dev-21', title: 'ThinkRail (JetBrains)', url: 'https://github.com/JetBrains/thinkrail', desc: 'JetBrains 开源 AI 推理辅助工具' },
     ],
   },
   {
@@ -371,6 +380,7 @@ export const defaultCategories: Category[] = [
     sites: [
       { id: 'eb-1', title: '电子书下载宝库', url: 'https://jbiaojerry.github.io/ebook-treasure-chest/', desc: '24000+本电子书免费下载，支持EPUB/MOBI/AZW3' },
       { id: 'eb-2', title: 'Gutenberg', url: 'https://gutenberg.org', desc: '7万多本经典老书免费下载' },
+      { id: 'eb-3', title: '宝藏岛书', url: 'https://shu.baozangdh.com/', desc: '宝藏岛书籍资源站，提供电子书下载' },
     ],
   },
 ]
