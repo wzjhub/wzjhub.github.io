@@ -13,7 +13,7 @@ export interface Category {
 }
 
 // 数据版本号：每次更新 data.ts 内容时递增此版本号，用户刷新页面会自动获取最新数据
-export const DATA_VERSION = '2026-11-13-v1'
+export const DATA_VERSION = '2026-11-14-v1'
 
 export const defaultCategories: Category[] = [
   {
@@ -29,7 +29,7 @@ export const defaultCategories: Category[] = [
       { id: 'portal-6', title: 'AI星踪岛', url: 'https://aixzd.com', desc: '国内专业 AI 内容平台，聚焦全球 AI 工具与机器人产业' },
       { id: 'portal-7', title: 'OpenAlternative', url: 'https://openalternative.co', desc: '1000+ 付费软件的开源免费替代品合集' },
       { id: 'portal-8', title: 'FMHY', url: 'https://fmhy.net', desc: '全网免费资源导航，Reddit 社区维护，近三万条链接' },
-      { id: 'portal-9', title: '二闪闪', url: 'https://eshuanshuan.eu.cc/products/7516153597902501334', desc: '二闪闪商品页' },
+      { id: 'portal-9', title: 'eshuanshuan', url: 'https://eshuanshuan.eu.cc/products/7516153597902501334', desc: 'eshuanshuan 商品页' },
     ],
   },
   {
@@ -135,6 +135,8 @@ export const defaultCategories: Category[] = [
       { id: 'aicd-10', title: 'Qoder', url: 'https://qoder.com/zh', desc: 'AI 编程工具' },
       { id: 'aicd-11', title: 'MotionSites AI', url: 'https://motionsites.ai', desc: 'AI 动效网站生成器，输入描述自动生成带动画效果的网页' },
       { id: 'aicd-12', title: 'free-claude-code', url: 'https://github.com/Alishahryar1/free-claude-code', desc: 'GitHub 开源方案，免费使用 Claude Code 的方法汇总' },
+      { id: 'aicd-13', title: 'DeepAI Code', url: 'https://deepai.org/chat/ai-code', desc: '免费 AI 编程助手，支持代码生成、调试和编程概念讲解' },
+      { id: 'aicd-14', title: 'Trae', url: 'https://www.trae.cn', desc: '字节跳动免费 AI IDE，基于 VS Code，支持国产大模型' },
     ],
   },
   {
