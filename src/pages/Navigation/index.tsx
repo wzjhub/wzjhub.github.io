@@ -28,15 +28,24 @@ const STORAGE_KEY = 'nav_categories'
 const VERSION_KEY = 'nav_data_version'
 const CLICKS_KEY = 'nav_clicks'
 
+// 始终使用最新的 defaultCategories，版本变化时自动更新
 const loadCategories = (): Category[] => {
+  // 开发环境直接用默认数据，避免热更新问题
+  if (import.meta.env.DEV) {
+    return defaultCategories
+  }
+  
+  const savedVersion = localStorage.getItem(VERSION_KEY)
+  
+  // 版本变化，直接用新数据
+  if (savedVersion !== DATA_VERSION) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultCategories))
+    localStorage.setItem(VERSION_KEY, DATA_VERSION)
+    return defaultCategories
+  }
+  
+  // 版本一致，读取用户自定义数据
   try {
-    const savedVersion = localStorage.getItem(VERSION_KEY)
-    // 版本不匹配时，清除旧数据，使用最新默认数据
-    if (savedVersion !== DATA_VERSION) {
-      localStorage.removeItem(STORAGE_KEY)
-      localStorage.setItem(VERSION_KEY, DATA_VERSION)
-      return defaultCategories
-    }
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) return JSON.parse(saved)
   } catch {}
@@ -158,6 +167,16 @@ const NavigationPage = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]?.id || '')
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }))
+
+  // 版本变化时自动更新数据（支持热更新）
+  useEffect(() => {
+    const savedVersion = localStorage.getItem(VERSION_KEY)
+    if (savedVersion !== DATA_VERSION) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultCategories))
+      localStorage.setItem(VERSION_KEY, DATA_VERSION)
+      setCategories(defaultCategories)
+    }
+  }, [])
 
   useEffect(() => { saveCategories(categories) }, [categories])
 
