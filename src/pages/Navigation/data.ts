@@ -13,7 +13,7 @@ export interface Category {
 }
 
 // 数据版本号：每次更新 data.ts 内容时递增此版本号，用户刷新页面会自动获取最新数据
-export const DATA_VERSION = '2026-11-14-v1'
+export const DATA_VERSION = '2026-11-14-v2'
 
 export const defaultCategories: Category[] = [
   {
@@ -51,6 +51,7 @@ export const defaultCategories: Category[] = [
       { id: 'plat-11', title: '商汤日日新', url: 'https://www.sensenova.cn/token-plan', desc: 'DeepSeek-V4 免费公测，每5小时500次，可接入 Claude Code' },
       { id: 'plat-13', title: '火山引擎邀请', url: 'https://volcengine.cgref.cn/1104', desc: '火山引擎邀请注册链接，新用户可领取免费额度' },
       { id: 'plat-14', title: 'BlueV 免费 Token', url: 'https://bluev.fun/free-tokens', desc: '免费 AI Token 领取平台，支持多种主流模型' },
+      { id: 'plat-15', title: '国家超算互联网', url: 'https://www.scnet.cn/', desc: '国家超算互联网平台，提供 AI 算力服务' },
     ],
   },
   {

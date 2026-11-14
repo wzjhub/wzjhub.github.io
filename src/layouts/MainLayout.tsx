@@ -1,11 +1,5 @@
-import { Layout, Menu, Button } from 'antd'
-import {
-  HomeOutlined,
-  GithubOutlined,
-  CompassOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from '@ant-design/icons'
+import { Layout, Button } from 'antd'
+import { GithubOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ClockWeather from '../components/ClockWeather'
@@ -23,11 +17,6 @@ const MainLayout = () => {
     window.addEventListener('toggle-sidebar', handler)
     return () => window.removeEventListener('toggle-sidebar', handler)
   }, [])
-
-  const menuItems = [
-    { key: '/', icon: <HomeOutlined />, label: '首页' },
-    { key: '/nav', icon: <CompassOutlined />, label: '导航' },
-  ]
 
   return (
     <Layout style={{ minHeight: '100vh', background: '#0f0f23' }}>
@@ -62,19 +51,6 @@ const MainLayout = () => {
             <span className="glow-text">Wzjhub</span>
           </motion.div>
         </div>
-
-        <Menu
-          mode="horizontal"
-          selectedKeys={[location.pathname]}
-          items={menuItems}
-          onClick={({ key }) => navigate(key)}
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            background: 'transparent',
-            borderBottom: 'none',
-          }}
-        />
 
         <div className="nav-clock" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <ClockWeather />
