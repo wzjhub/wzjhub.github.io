@@ -13,7 +13,7 @@ export interface Category {
 }
 
 // 数据版本号：每次更新 data.ts 内容时递增此版本号，用户刷新页面会自动获取最新数据
-export const DATA_VERSION = '2026-11-14-v3'
+export const DATA_VERSION = '2026-11-15-v1'
 
 export const defaultCategories: Category[] = [
   {
@@ -69,6 +69,7 @@ export const defaultCategories: Category[] = [
       { id: 'aic-8', title: '腾讯ima', url: 'https://ima.qq.com', desc: '腾讯 AI 助手' },
       { id: 'aic-9', title: 'Poe', url: 'https://poe.com', desc: '一个网站用 GPT-4o/Claude/Gemini' },
       { id: 'aic-10', title: 'Google Labs', url: 'https://labs.google', desc: 'Google AI 实验室' },
+      { id: 'aic-11', title: 'Prompts.chat', url: 'https://prompts.chat', desc: 'ChatGPT 提示词大全，精选高质量 prompt 模板' },
     ],
   },
   {
